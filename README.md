@@ -1,4 +1,4 @@
-# 日本語 学習 — JLPT Learning App 🇯🇵✨
+# JLPT Learning App 🇯🇵✨
 
 Ứng dụng học từ vựng tiếng Nhật Single Page Application (SPA) hiện đại, trực quan và tích hợp trợ lý AI thông minh giúp nâng cao hiệu quả ôn luyện JLPT.
 
