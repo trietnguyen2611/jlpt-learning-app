@@ -15,12 +15,12 @@ if getattr(sys, "frozen", False):
     # Running as a PyInstaller bundle
     _base_dir = sys._MEIPASS
     _data_dir = os.path.dirname(sys.executable)
-    app = Flask(__name__, template_folder=os.path.join(_base_dir, "templates"))
 else:
     # Running as a normal Python script
-    _data_dir = os.path.dirname(os.path.abspath(__file__))
-    app = Flask(__name__)
+    _base_dir = os.path.dirname(os.path.abspath(__file__))
+    _data_dir = _base_dir
 
+app = Flask(__name__, template_folder=os.path.join(_base_dir, "templates"))
 DATA_FILE = os.path.join(_data_dir, "vocab_data.json")
 
 SYSTEM_INSTRUCTION = (
@@ -170,6 +170,9 @@ if __name__ == "__main__":
         daemon=True,
     ).start()
 
+    # Path to the custom window icon
+    icon_path = os.path.join(_base_dir, "icon", "app.ico")
+
     # Launch native desktop window
     webview.create_window(
         title="JLPT Learning App 🇯🇵",
@@ -178,5 +181,6 @@ if __name__ == "__main__":
         height=800,
         min_size=(900, 600),
         resizable=True,
+        icon=icon_path if os.path.exists(icon_path) else None,
     )
     webview.start()
