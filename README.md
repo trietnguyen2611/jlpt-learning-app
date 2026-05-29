@@ -4,7 +4,7 @@
 
 ---
 
-## 🌟 Tính năng nổi bật
+## 🌟 Tính năng:
 
 - 📚 **Quản lý từ vựng thông minh (Vocabulary Management):** Thêm mới, xóa từ vựng trực quan. Toàn bộ dữ liệu được lưu trữ tự động và an toàn trong tệp JSON (`vocab_data.json`).
 - 🃏 **Thẻ ghi nhớ Flashcard 3D:** Giao diện lật thẻ 3D mượt mà với hiệu ứng động cao cấp. Hỗ trợ trộn thẻ ngẫu nhiên, xem tuần tự và có thanh tiến trình trực quan.
@@ -14,7 +14,7 @@
 
 ---
 
-## 🛠️ Công nghệ sử dụng
+## 🛠️ Công nghệ sử dụng:
 
 - **Backend:** Python, Flask, Requests.
 - **Frontend:** HTML5, CSS3 (Vanilla CSS với biến CSS, Glassmorphism, animations nâng cao), Vanilla JavaScript (Ajax, API interaction).
@@ -22,7 +22,7 @@
 
 ---
 
-## 🚀 Hướng dẫn cài đặt & Chạy ứng dụng
+## 🚀 Hướng dẫn cài đặt & Chạy ứng dụng:
 
 Làm theo các bước đơn giản sau để chạy ứng dụng trên máy tính của bạn:
 
