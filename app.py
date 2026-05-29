@@ -170,9 +170,6 @@ if __name__ == "__main__":
         daemon=True,
     ).start()
 
-    # Path to the custom window icon
-    icon_path = os.path.join(_base_dir, "icon", "app.ico")
-
     # Launch native desktop window
     webview.create_window(
         title="JLPT Learning App 🇯🇵",
@@ -181,6 +178,5 @@ if __name__ == "__main__":
         height=800,
         min_size=(900, 600),
         resizable=True,
-        icon=icon_path if os.path.exists(icon_path) else None,
     )
     webview.start()
