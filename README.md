@@ -1,6 +1,6 @@
 # JLPT Learning App✨
 
-Ứng dụng học từ vựng tiếng Nhật dạng Desktop App, chạy trực tiếp trên macOS như một phần mềm độc lập (không cần mở trình duyệt). Tích hợp trợ lý AI Gemini giúp nâng cao hiệu quả ôn luyện JLPT.
+Ứng dụng học từ vựng tiếng Nhật dạng Desktop App, chạy trực tiếp trên Windows / macOS như một phần mềm độc lập - native (không cần mở trình duyệt). Tích hợp trợ lý AI Gemini giúp nâng cao hiệu quả ôn luyện.
 
 ---
 
