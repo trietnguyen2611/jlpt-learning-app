@@ -1,4 +1,4 @@
-# 日本語 学習 — Japanese Vocabulary Trainer
+# 日本語 学習 — Japanese Vocabulary
 
 Ứng dụng học từ vựng tiếng Nhật với giao diện PyQt6 hiện đại, dark-theme.
 
