@@ -174,7 +174,7 @@ if __name__ == "__main__":
 
     # Launch native desktop window
     webview.create_window(
-        title="JLPT Learning App 🇯🇵",
+        title="JLPT Learning App",
         url="http://127.0.0.1:5000",
         width=1280,
         height=800,
