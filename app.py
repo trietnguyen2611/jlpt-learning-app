@@ -1,8 +1,10 @@
 import json
 import os
 import sys
+import threading
 
 import requests
+import webview
 from flask import Flask, jsonify, render_template, request
 
 # Determine paths when running as a packaged executable (PyInstaller)
@@ -174,5 +176,23 @@ def chat():
 # Entry point
 # ---------------------------------------------------------------------------
 
+def start_flask():
+    # Run Flask in a silent mode without debug reloader to prevent double window startup
+    app.run(port=5000, debug=False, use_reloader=False)
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    # Start Flask server in a background daemon thread
+    flask_thread = threading.Thread(target=start_flask)
+    flask_thread.daemon = True
+    flask_thread.start()
+    
+    # Create and start the native desktop window pointing to local Flask server
+    webview.create_window(
+        title="JLPT Learning App 🇯🇵",
+        url="http://127.0.0.1:5000",
+        width=1280,
+        height=800,
+        min_size=(1024, 768),
+        resizable=True
+    )
+    webview.start()
