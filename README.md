@@ -83,6 +83,8 @@ jlpt-learning-app/
 ├── templates/
 │   └── index.html      # Giao diện SPA (HTML + CSS + JS)
 ├── icon/
-│   └── app.ico         # Icon ứng dụng (ICO format)
+│   └── app.ico         # Icon ứng dụng (.ico - dành riêng cho Windows)
+    └── app.png
+    └── app.icns        # Icon ứng dụng (.icns - dành riêng cho macOS)
 └── README.md
 ```
