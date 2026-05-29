@@ -14,7 +14,9 @@ from flask import Flask, jsonify, render_template, request
 if getattr(sys, "frozen", False):
     # Running as a PyInstaller bundle
     _base_dir = sys._MEIPASS
-    _data_dir = os.path.dirname(sys.executable)
+    _data_dir = os.path.join(os.path.expanduser("~"), ".jlpt_learning_app")
+    if not os.path.exists(_data_dir):
+        os.makedirs(_data_dir)
 else:
     # Running as a normal Python script
     _base_dir = os.path.dirname(os.path.abspath(__file__))
