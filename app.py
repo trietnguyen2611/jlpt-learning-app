@@ -1,12 +1,22 @@
 import json
 import os
+import sys
 
 import requests
 from flask import Flask, jsonify, render_template, request
 
-app = Flask(__name__)
+# Determine paths when running as a packaged executable (PyInstaller)
+if getattr(sys, 'frozen', False):
+    # PyInstaller temporary extraction folder for static files
+    template_folder = os.path.join(sys._MEIPASS, "templates")
+    app = Flask(__name__, template_folder=template_folder)
+    # Writable directory of the actual executable to persist vocabulary data
+    executable_dir = os.path.dirname(sys.executable)
+else:
+    app = Flask(__name__)
+    executable_dir = os.path.dirname(os.path.abspath(__file__))
 
-DATA_FILE = os.path.join(os.path.dirname(__file__), "vocab_data.json")
+DATA_FILE = os.path.join(executable_dir, "vocab_data.json")
 
 SYSTEM_INSTRUCTION = (
     "Bạn là gia sư tiếng Nhật chuyên nghiệp, thân thiện và kiên nhẫn. "
