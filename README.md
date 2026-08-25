@@ -1,40 +1,42 @@
-# JLPT Learning App✨
+# JLPT Learning App – Japanese Vocabulary Desktop App with AI
 
-A desktop app for learning Japanese vocabulary. It runs directly on Windows and macOS like a normal software (no need to open a browser). It also has an AI helper (Gemini) to make practice better.
+A free **JLPT vocabulary learning app** for Windows and macOS. Learn Japanese words with flashcards, quizzes, and Google Gemini AI. No browser needed – it runs as a real desktop software.
 
----
-
-## 🌟 Main Features:
-
-- 📚 **Vocabulary Management** — Add or delete words easily. Data is saved automatically in the file `vocab_data.json`.
-- 🃏 **Flashcards** — Smooth 3D flip cards. You can shuffle the cards and see a progress bar.
-- ✏️ **Quiz** — The app creates 4-choice questions from your own word list.
-- 🤖 **Learn with AI - Experimental** — Uses **Gemini 2.0 Flash** to explain grammar, compare words, and translate.
-- 🌓 **Dark / Light Mode** — Nice Liquid Glass design.
+Perfect for JLPT N5 to N1 students who want a simple, offline-friendly Japanese vocabulary trainer with AI help.
 
 ---
 
-## 🛠️ Technologies:
+## 🌟 Key Features
 
-| Part | Details |
+- 📚 **Japanese Vocabulary Manager** — Add, edit, and delete words easily. All data saves automatically to `vocab_data.json`.
+- 🃏 **3D Flashcards** — Smooth flip cards with random shuffle and progress tracking. Great for daily JLPT practice.
+- ✏️ **Auto Quiz Generator** — Creates multiple-choice questions from your own word list.
+- 🤖 **AI Learning Assistant (Gemini)** — Ask about grammar, word differences, and translations using **Google Gemini 2.0 Flash**.
+- 🌓 **Dark & Light Mode** — Modern Liquid Glass interface that looks good on any screen.
+
+---
+
+## 🛠️ Tech Stack
+
+| Part | Technology |
 |---|---|
-| Backend | Python, Flask |
-| Frontend | HTML5, CSS3 (Glassmorphism), Vanilla JS |
-| Desktop | pywebview (native window on macOS) |
+| Backend | Python + Flask |
+| Frontend | HTML5, CSS3 (Glassmorphism), Vanilla JavaScript |
+| Desktop Window | pywebview (native on Windows & macOS) |
 | AI | Google Gemini API (`gemini-2.0-flash`) |
 | Packaging | PyInstaller |
 
 ---
 
-## 🚀 Install & Run:
+## 🚀 How to Install & Run
 
-### 1. Clone the project
+### 1. Clone the repository
 ```bash
 git clone https://github.com/trietnguyen2611/jlpt-learning-app.git
 cd jlpt-learning-app
 ```
 
-### 2. Create a Conda virtual environment (or use Base) and install libraries
+### 2. Create virtual environment and install packages
 ```bash
 conda create -n jlpt python=3.13 -y
 conda activate jlpt
@@ -42,36 +44,42 @@ pip install -r requirements.txt
 ```
 
 > [!IMPORTANT]
-> The desktop window library is **`pywebview`** (not `webview`). The file `requirements.txt` already has the correct name. Just run `pip install -r requirements.txt`.
+> Use **`pywebview`** (not `webview`). The correct package is already listed in `requirements.txt`.
 
-### 3. Run the app
+### 3. Start the app
 ```bash
 python app.py
 ```
-A software window will open on your screen — no browser needed.
+A native desktop window will open. You do not need a browser.
 
 ---
 
-## 🤖 Set up Learn with AI:
+## 🤖 Set Up the AI Feature
 
-1. Create a free API Key at [Google AI Studio](https://aistudio.google.com/app/apikey) - note that using this API may cost money.
-2. Open the app → go to the **🤖 Learn with AI** tab → paste your API Key.
-3. Start asking questions and talk with the AI.
+1. Get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+2. Open the app → go to the **Learn with AI** tab → paste your API key.
+3. Start asking questions about Japanese grammar and vocabulary.
 
 ---
 
-## 📁 Project Structure:
+## 📁 Project Structure
 
 ```
 jlpt-learning-app/
 ├── app.py              # Flask server + pywebview desktop window
 ├── requirements.txt    # flask, requests, pywebview
-├── vocab_data.json     # Vocabulary data (created automatically)
+├── vocab_data.json     # Vocabulary data (auto created)
 ├── templates/
-│   └── index.html      # SPA interface (HTML + CSS + JS)
+│   └── index.html      # Single page app (HTML + CSS + JS)
 ├── icon/
-│   └── app.ico         # App icon (.ico - for Windows only)
-    └── app.png
-    └── app.icns        # App icon (.icns - for macOS only)
+│   ├── app.ico         # Windows icon
+│   ├── app.png
+│   └── app.icns        # macOS icon
 └── README.md
 ```
+
+---
+
+## Keywords
+
+`JLPT` `Japanese vocabulary` `flashcards` `language learning` `desktop app` `Python` `Flask` `pywebview` `Gemini AI` `Japanese study tool`
