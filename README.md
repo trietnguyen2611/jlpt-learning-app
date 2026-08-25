@@ -1,40 +1,40 @@
 # JLPT Learning App✨
 
-Ứng dụng học từ vựng tiếng Nhật dạng Desktop App, chạy trực tiếp trên Windows / macOS như một phần mềm độc lập - native (không cần mở trình duyệt). Tích hợp trợ lý AI Gemini giúp nâng cao hiệu quả ôn luyện.
+A desktop app for learning Japanese vocabulary. It runs directly on Windows and macOS like a normal software (no need to open a browser). It also has an AI helper (Gemini) to make practice better.
 
 ---
 
-## 🌟 Tính năng:
+## 🌟 Main Features:
 
-- 📚 **Quản lý từ vựng** — Thêm, xoá từ vựng trực quan. Dữ liệu lưu tự động vào file `vocab_data.json`.
-- 🃏 **Flashcard** — Thẻ ghi nhớ lật 3D mượt mà, hỗ trợ trộn thẻ ngẫu nhiên và thanh tiến trình.
-- ✏️ **Kiểm tra** — Tự động tạo câu hỏi 4 đáp án từ danh sách từ vựng cá nhân.
-- 🤖 **Học với AI - Tính năng thử nghiệm** — Tích hợp **Gemini 2.0 Flash** giúp giải thích ngữ pháp, phân biệt từ vựng, dịch thuật.
-- 🌓 **Dark / Light Mode** — Giao diện Liquid Glass sang trọng.
+- 📚 **Vocabulary Management** — Add or delete words easily. Data is saved automatically in the file `vocab_data.json`.
+- 🃏 **Flashcards** — Smooth 3D flip cards. You can shuffle the cards and see a progress bar.
+- ✏️ **Quiz** — The app creates 4-choice questions from your own word list.
+- 🤖 **Learn with AI - Experimental** — Uses **Gemini 2.0 Flash** to explain grammar, compare words, and translate.
+- 🌓 **Dark / Light Mode** — Nice Liquid Glass design.
 
 ---
 
-## 🛠️ Công nghệ:
+## 🛠️ Technologies:
 
-| Thành phần | Chi tiết |
+| Part | Details |
 |---|---|
 | Backend | Python, Flask |
 | Frontend | HTML5, CSS3 (Glassmorphism), Vanilla JS |
-| Desktop | pywebview (cửa sổ native macOS) |
+| Desktop | pywebview (native window on macOS) |
 | AI | Google Gemini API (`gemini-2.0-flash`) |
-| Đóng gói | PyInstaller |
+| Packaging | PyInstaller |
 
 ---
 
-## 🚀 Cài đặt & Chạy:
+## 🚀 Install & Run:
 
-### 1. Clone dự án
+### 1. Clone the project
 ```bash
 git clone https://github.com/trietnguyen2611/jlpt-learning-app.git
 cd jlpt-learning-app
 ```
 
-### 2. Tạo môi trường ảo Conda (hoặc có thể chạy Base - tùy bạn) và cài thư viện
+### 2. Create a Conda virtual environment (or use Base) and install libraries
 ```bash
 conda create -n jlpt python=3.13 -y
 conda activate jlpt
@@ -42,36 +42,36 @@ pip install -r requirements.txt
 ```
 
 > [!IMPORTANT]
-> Thư viện cửa sổ desktop là **`pywebview`** (không phải `webview`). File `requirements.txt` đã khai báo đúng, chỉ cần chạy `pip install -r requirements.txt`.
+> The desktop window library is **`pywebview`** (not `webview`). The file `requirements.txt` already has the correct name. Just run `pip install -r requirements.txt`.
 
-### 3. Chạy ứng dụng
+### 3. Run the app
 ```bash
 python app.py
 ```
-Một cửa sổ phần mềm sẽ mở lên ngay trên màn hình — không cần mở trình duyệt.
+A software window will open on your screen — no browser needed.
 
 ---
 
-## 🤖 Cấu hình mục Học với AI:
+## 🤖 Set up Learn with AI:
 
-1. Tạo API Key miễn phí tại [Google AI Studio](https://aistudio.google.com/app/apikey) - lưu ý khi sử dụng API này sẽ mất phí.
-2. Mở ứng dụng → tab **🤖 Học với AI** → dán API Key vào ô nhập liệu.
-3. Bắt đầu đặt câu hỏi và trao đổi với AI.
+1. Create a free API Key at [Google AI Studio](https://aistudio.google.com/app/apikey) - note that using this API may cost money.
+2. Open the app → go to the **🤖 Learn with AI** tab → paste your API Key.
+3. Start asking questions and talk with the AI.
 
 ---
 
-## 📁 Cấu trúc dự án:
+## 📁 Project Structure:
 
 ```
 jlpt-learning-app/
-├── app.py              # Server Flask + pywebview desktop window
+├── app.py              # Flask server + pywebview desktop window
 ├── requirements.txt    # flask, requests, pywebview
-├── vocab_data.json     # Dữ liệu từ vựng (tự động tạo)
+├── vocab_data.json     # Vocabulary data (created automatically)
 ├── templates/
-│   └── index.html      # Giao diện SPA (HTML + CSS + JS)
+│   └── index.html      # SPA interface (HTML + CSS + JS)
 ├── icon/
-│   └── app.ico         # Icon ứng dụng (.ico - dành riêng cho Windows)
+│   └── app.ico         # App icon (.ico - for Windows only)
     └── app.png
-    └── app.icns        # Icon ứng dụng (.icns - dành riêng cho macOS)
+    └── app.icns        # App icon (.icns - for macOS only)
 └── README.md
 ```
