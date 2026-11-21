@@ -54,12 +54,19 @@ A native desktop window will open. You do not need a browser.
 
 ## 📦 Build the desktop app
 
-GitHub Actions has separate workflows for each target:
+The **Build and release desktop apps** GitHub Actions workflow builds Windows and macOS Apple Silicon apps from the same commit:
 
-- **Build Windows app** creates `JLPTLearning-Windows.zip`, containing `JLPTLearning.exe`.
-- **Build macOS Apple Silicon app** creates `JLPTLearning-macOS-Apple-Silicon.zip`, containing `JLPTLearning.app`.
+- Pull requests and manual runs create downloadable build artifacts for both platforms.
+- Pushing a version tag such as `v1.2.3` creates one GitHub Release containing `JLPTLearning-Windows-v1.2.3.exe` and `JLPTLearning-macOS-Apple-Silicon-v1.2.3.dmg`.
 
-Both workflows run on pushes, pull requests, and manual dispatches. To download a build, open the completed workflow run on GitHub and download its artifact. These builds are unsigned; macOS may require opening the app via Finder's **Open** command the first time.
+To publish a release, tag and push the version:
+
+```bash
+git tag v1.2.3
+git push origin v1.2.3
+```
+
+The builds are unsigned; macOS may require opening the app via Finder's **Open** command the first time.
 
 ---
 
