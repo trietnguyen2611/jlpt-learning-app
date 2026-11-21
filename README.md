@@ -58,6 +58,7 @@ The **Build and release desktop apps** GitHub Actions workflow builds Windows an
 
 - Pull requests and manual runs create downloadable build artifacts for both platforms.
 - Pushing a version tag such as `v1.2.3` creates one GitHub Release containing `JLPTLearning-Windows-v1.2.3.exe` and `JLPTLearning-macOS-Apple-Silicon-v1.2.3.dmg`.
+- To publish the existing `v1.0.0` tag, run **Build and release desktop apps** from **Actions → Run workflow** on `main`, leaving the `release_tag` input as `v1.0.0`. Both builds check out that tag and upload the `.exe` and `.dmg` to its Release.
 
 To publish a release, tag and push the version:
 
