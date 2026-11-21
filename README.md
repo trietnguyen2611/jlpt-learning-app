@@ -52,6 +52,15 @@ python app.py
 ```
 A native desktop window will open. You do not need a browser.
 
+## 📦 Build the desktop app
+
+GitHub Actions has separate workflows for each target:
+
+- **Build Windows app** creates `JLPTLearning-Windows.zip`, containing `JLPTLearning.exe`.
+- **Build macOS Apple Silicon app** creates `JLPTLearning-macOS-Apple-Silicon.zip`, containing `JLPTLearning.app`.
+
+Both workflows run on pushes, pull requests, and manual dispatches. To download a build, open the completed workflow run on GitHub and download its artifact. These builds are unsigned; macOS may require opening the app via Finder's **Open** command the first time.
+
 ---
 
 ## 🤖 Set Up the AI Feature

@@ -6,6 +6,7 @@ import threading
 import requests
 import webview
 from flask import Flask, jsonify, render_template, request
+from werkzeug.serving import make_server
 
 # ---------------------------------------------------------------------------
 # App & Path Configuration
@@ -15,8 +16,7 @@ if getattr(sys, "frozen", False):
     # Running as a PyInstaller bundle
     _base_dir = sys._MEIPASS
     _data_dir = os.path.join(os.path.expanduser("~"), ".jlpt_learning_app")
-    if not os.path.exists(_data_dir):
-        os.makedirs(_data_dir)
+    os.makedirs(_data_dir, exist_ok=True)
 else:
     # Running as a normal Python script
     _base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -166,19 +166,19 @@ def chat():
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    # Start Flask in a background daemon thread
-    threading.Thread(
-        target=lambda: app.run(port=5000, debug=False, use_reloader=False),
-        daemon=True,
-    ).start()
+    server = make_server("127.0.0.1", 0, app)
+    threading.Thread(target=server.serve_forever, daemon=True).start()
 
-    # Launch native desktop window
-    webview.create_window(
-        title="JLPT Learning App",
-        url="http://127.0.0.1:5000",
-        width=1280,
-        height=800,
-        min_size=(900, 600),
-        resizable=True,
-    )
-    webview.start()
+    try:
+        webview.create_window(
+            title="JLPT Learning App",
+            url=f"http://127.0.0.1:{server.server_port}",
+            width=1280,
+            height=800,
+            min_size=(900, 600),
+            resizable=True,
+        )
+        webview.start()
+    finally:
+        server.shutdown()
+        server.server_close()
